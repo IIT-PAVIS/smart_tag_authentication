@@ -43,7 +43,7 @@ PAY ATTENTION THAT CURRENTLY THE SPLITS ARE HARD-CODED IN create_dataset.py !!!!
 ## Model Training
 The model implementation is in the `classifier_ord_regr` folder. 
 
-The modes have been implemented in `model.py`, while the dataloaders have been implemented in `data_module.py`.
+The model has been implemented in `model.py`, while the dataloaders have been implemented in `data_module.py`.
 
 ## Classifier Ordinal Regression
 ### Create Data Split
