@@ -10,7 +10,7 @@ pipenv install
 ## Dataset creation
 The provided data are expected to be in `filename.jpg` format and placed in `./data/imgs/` folder with the related annotation file, named `filename.csv`.
 
-The current dataset can be downloaded from the following [link](https://pavisdata.iit.it/data/collaborations/hiqnano/imgs.zip). All the contained images should should be unzipped into `./data/imgs/`.
+The current dataset can be provided upon request. All the contained images should should be unzipped into `./data/imgs/`.
 
 Annotate the 4 code corners and reorganize the data using the following command:
 ```
