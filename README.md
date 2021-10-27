@@ -1,5 +1,5 @@
 # HiQNano
-Code for analyzing the generated color codes using a custom implemented CNN.
+Supporting code for the paper "Nanocatalyst-enabled physically unclonable functions as smart anticounterfeiting tags with AI-aided smartphone authentication".
 
 ## Installation
 ```
