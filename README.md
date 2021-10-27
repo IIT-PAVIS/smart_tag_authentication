@@ -41,9 +41,9 @@ It will create a `./dataset/` folder and `TRAIN`, `VAL` and `TEST` subfolders wi
 PAY ATTENTION THAT CURRENTLY THE SPLITS ARE HARD-CODED IN create_dataset.py !!!!
 
 ## Model Training
-Currently there are 2 models implementation, contained in the `classifier` and in the `classifier_ord_regr` folders. 
+The model implementation is in the `classifier_ord_regr` folder. 
 
-The models have been implemented in the LightningClassifier contained in `model.py`, while the dataloaders have been implemented in `data_module.py`.
+The modes have been implemented in `model.py`, while the dataloaders have been implemented in `data_module.py`.
 
 ## Classifier Ordinal Regression
 ### Create Data Split
