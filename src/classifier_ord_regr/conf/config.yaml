@@ -1,0 +1,65 @@
+---
+hydra:
+  run:
+    dir: outputs/singlerun/${now:%Y-%m-%d}/${now:%H-%M-%S}/class_n:${model.class_num}/seed:${model.seed}/
+  sweep:
+    dir: outputs/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ./class_n:${model.class_num}/seed:${model.seed}/lr:${model.learning_rate}
+
+model:
+  model_name: resnet50
+  class_num: 4
+  learning_rate: 3e-4
+  use_pretrained: True
+  fix_layers: True
+
+  t_conv_size: 225
+
+  batch_size: 16
+  num_workers: 4
+  
+  input_data_dir: data/imgs/
+  input_splits_dir: data/splits_ord_regr/
+  
+  use_seed: true
+  seed: 124
+  
+model_pretrained:
+  checkpoint_paths: [
+outputs/singlerun/2021-07-20/09-48-00/class_n:4/seed:124/lightning_logs/version_0/checkpoints/epoch=879-step=2639.ckpt
+]
+
+trainer:
+  default_save_path: None
+  checkpoint_save_epoch_period: 1
+
+  gpus: 1
+  max_epochs: 50000
+  deterministic: true
+  check_val_every_n_epoch: 1
+  resume_from_checkpoint: null
+
+  limit_train_batches: 1.0
+  limit_val_batches: 1.0
+  limit_test_batches: 1.0
+
+  auto_lr_find: false
+  auto_scale_batch_size: false
+  benchmark: false  
+  profiler: true
+
+  data_augmentation:
+    image_size: 28
+    
+    train:
+      shift_scale_rotate:
+        p: 0.5
+        rotate_limit: 180
+        shift_limit: 0.2
+        scale_limit: 3
+      horizontal_flip:
+        p: 0.5
+      random_brightness_contrast: 
+        p: 0.5
+      to_gray:
+        p: 0.0

@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+torch = {file = "https://download.pytorch.org/whl/cu111/torch-1.8.0%2Bcu111-cp38-cp38-linux_x86_64.whl"}
+torchvision = {file = "https://download.pytorch.org/whl/cu111/torchvision-0.9.1%2Bcu111-cp38-cp38-linux_x86_64.whl"}
+opencv-python = "*"
+matplotlib = "*"
+scikit-learn = "*"
+scipy = "*"
+pandas = "*"
+pytorch-lightning = "*"
+tensorboard = "*"
+hydra-core = "*"
+albumentations = "*"
+seaborn = "*"
+
+[dev-packages]
+black = "*"
+isort = "*"
+flake8 = "*"
+
+[requires]
+python_version = "3.8"
